@@ -34,9 +34,15 @@ export default function LoginPage() {
       {/* ส่วนกลาง: ฟอร์มและปุ่มล็อกอินหลัก */}
       <div className="w-full max-w-sm mx-auto my-auto space-y-6">
         
-        {/* พระเอกของเรา: ปุ่ม LINE Login */}
+        
+       .{/* พระเอกของเรา: ปุ่ม LINE Login */}
         <button 
-          onClick={() => alert("กำลังเชื่อมต่อระบบ LINE Login...")}
+          onClick={() => {
+            const channelId = "2010494729"; // Channel ID ของพี่
+            const callbackUrl = encodeURIComponent("https://futverse.vercel.app/api/auth/callback");
+            const lineAuthUrl = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${callbackUrl}&state=random123&scope=profile%20openid`;
+            window.location.href = lineAuthUrl;
+          }}
           className="w-full bg-[#00C300] hover:bg-[#00B000] text-white font-bold py-4 px-6 rounded-2xl flex items-center justify-center space-x-3 shadow-lg shadow-green-900/20 active:scale-[0.99] transition-all"
         >
           <span className="text-xl">💬</span>
