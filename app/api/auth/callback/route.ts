@@ -22,8 +22,8 @@ export async function GET(req: Request) {
         grant_type: 'authorization_code',
         code: code,
         redirect_uri: 'https://futverse.vercel.app/api/auth/callback',
-        client_id: process.env.LINE_CHANNEL_ID || '',
-        client_secret: process.env.LINE_CHANNEL_SECRET || '',
+        client_id: process.env.LINE_LOGIN_CHANNEL_ID || '',
+        client_secret: process.env.LINE_LOGIN_CHANNEL_SECRET || '',
       }),
     });
 
