@@ -23,8 +23,9 @@ export async function GET(req: NextRequest) {
         grant_type: 'authorization_code',
         code: code,
         redirect_uri: 'https://futverse.vercel.app/api/auth/callback',
-        client_id: process.env.LINE_LOGIN_CHANNEL_ID || '',
-        client_secret: process.env.LINE_LOGIN_CHANNEL_SECRET || '',
+        // ท่าไม้ตาย: ใส่ ID และ Secret ตรงๆ ไปเลยเพื่อแก้ปัญหา Vercel ไม่จำค่า
+        client_id: '2010501872',
+        client_secret: 'd5b53d5e28ec4b06c750c8534dfd52c1',
       }),
     });
 
