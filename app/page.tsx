@@ -26,8 +26,7 @@ if (name && pic) {
 const handleLineLogin = () => {
 const channelId = "2010501872";
 const callbackUrl = encodeURIComponent("https://futverse.vercel.app/api/auth/callback");
-const lineAuthUrl = https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${callbackUrl}&state=random123&scope=profile%20openid;
-window.location.href = lineAuthUrl;
+const lineAuthUrl = `https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${channelId}&redirect_uri=${callbackUrl}&state=random123&scope=profile%20openid`;window.location.href = lineAuthUrl;
 };
 
 return (
